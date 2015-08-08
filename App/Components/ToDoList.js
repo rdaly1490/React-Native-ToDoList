@@ -12,15 +12,16 @@ class ToDoList extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			selectedTab: true
+			selectedTab:true
 		}
 	}
 	renderToDos(){
+		console.log("renderToDos works");
 		return(
-			<View style={styles.tabContent}>
-				<Text style={styles.test}>Hello There</Text>
-				<Text style={styles.test}>Hello There</Text>
-				<Text style={styles.test}>Hello There</Text>
+			<View>
+				<Text style={styles.test}>Hello World</Text>
+				<Text style={styles.test}>Hello World</Text>
+				<Text style={styles.test}>Hello World</Text>
 			</View>
 		);
 	}
@@ -34,12 +35,16 @@ class ToDoList extends React.Component{
 		        	selected={this.state.selectedTab}
 		        	systemIcon="contacts"
 		        	onPress={() => console.log("click works")}>
-		        {this.renderToDos}
+		        	<View style={styles.container}>
+		        		{this.renderToDos()}
+		        	</View>
 		        </TabBarIOS.Item>
 		        <TabBarIOS.Item
+		        	selected={this.state.selectedTab === 'greenTab'}
 		        	systemIcon="more">Test2
 		        </TabBarIOS.Item>
 		        <TabBarIOS.Item
+		        	selected={this.state.selectedTab === 'redTab'}
 		        	systemIcon="featured">Test2
 		        </TabBarIOS.Item>
 		    </TabBarIOS>	
@@ -49,7 +54,7 @@ class ToDoList extends React.Component{
 
 var styles = StyleSheet.create({
   container: {
-	
+	flex: 1
   },
   listContainer: {
   	flex: 1,
@@ -59,9 +64,8 @@ var styles = StyleSheet.create({
 	textAlign: 'center',
 	marginTop: 80,
   },
-  tabContent: {
-    flex: 1,
-    alignItems: 'center',
+  testTwo: {
+  	marginTop: 50
   }
 });
 
