@@ -12,11 +12,10 @@ class ToDoList extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			selectedTab:true
+			selectedTab: "ActiveToDos"
 		}
 	}
 	renderToDos(){
-		console.log("renderToDos works");
 		return(
 			<View>
 				<Text style={styles.test}>Hello World</Text>
@@ -25,27 +24,66 @@ class ToDoList extends React.Component{
 			</View>
 		);
 	}
+	renderSubmitForm(){
+		return(
+			<View>
+				<Text style={styles.test}>Hello Submit</Text>
+				<Text style={styles.test}>Hello Submit</Text>
+				<Text style={styles.test}>Hello Submit</Text>
+			</View>
+		);
+	}
+	renderHistory(){
+		return(
+			<View>
+				<Text style={styles.test}>Hello History</Text>
+				<Text style={styles.test}>Hello History</Text>
+				<Text style={styles.test}>Hello History</Text>
+			</View>
+		);
+	}
 	render(){
-		console.log("route works");
 		return(
 			<TabBarIOS
 		        tintColor="white"
 		        barTintColor="darkslateblue">
 		        <TabBarIOS.Item
-		        	selected={this.state.selectedTab}
+		        	selected={this.state.selectedTab === "ActiveToDos"}
 		        	systemIcon="contacts"
-		        	onPress={() => console.log("click works")}>
-		        	<View style={styles.container}>
-		        		{this.renderToDos()}
-		        	</View>
+		        	onPress={() => {
+		        		this.setState({
+		        			selectedTab: "ActiveToDos"
+		        		});
+		        	}}>
+	        	<View style={styles.container}>
+	        		{this.renderToDos()}
+	        	</View>
 		        </TabBarIOS.Item>
+
 		        <TabBarIOS.Item
-		        	selected={this.state.selectedTab === 'greenTab'}
-		        	systemIcon="more">Test2
+		        	selected={this.state.selectedTab === 'SubmitToDo'}
+		        	systemIcon="more"
+		        	onPress={() => {
+		        		this.setState({
+		        			selectedTab: "SubmitToDo"
+		        		});
+		        	}}>
+	        	<View style={styles.container}>
+	        		{this.renderSubmitForm()}
+	        	</View>
 		        </TabBarIOS.Item>
+
 		        <TabBarIOS.Item
-		        	selected={this.state.selectedTab === 'redTab'}
-		        	systemIcon="featured">Test2
+		        	selected={this.state.selectedTab === 'completedToDos'}
+		        	systemIcon="featured"
+		        	onPress={() => {
+		        		this.setState({
+		        			selectedTab: "completedToDos"
+		        		});
+		        	}}>
+		        <View style={styles.container}>
+	        		{this.renderHistory()}
+	        	</View>
 		        </TabBarIOS.Item>
 		    </TabBarIOS>	
 		);
