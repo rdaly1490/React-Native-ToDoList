@@ -1,5 +1,6 @@
 var React = require("react-native");
 var TabBar = require("./TabBar");
+var SubmitToDos = require("./SubmitToDos");
 
 var {
 	View,
@@ -26,10 +27,8 @@ class ToDoList extends React.Component{
 	}
 	renderSubmitForm(){
 		return(
-			<View>
-				<Text style={styles.test}>Hello Submit</Text>
-				<Text style={styles.test}>Hello Submit</Text>
-				<Text style={styles.test}>Hello Submit</Text>
+			<View style={styles.testTwo}>
+				<SubmitToDos />
 			</View>
 		);
 	}
@@ -103,7 +102,7 @@ var styles = StyleSheet.create({
 	marginTop: 80,
   },
   testTwo: {
-  	marginTop: 50
+  	marginTop: 80
   }
 });
 
