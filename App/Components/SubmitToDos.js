@@ -19,23 +19,27 @@ class SubmitToDos extends React.Component{
 		this.setState({
 			newToDo: event.nativeEvent.text
 		});
-		console.log(this.state.newToDo);
 	}
 	onSubmitPressed(){
 		var ToDoObject = {
 			ToDo: this.state.newToDo,
 			completed: false
-		}
+		};
 		console.log("submitted", ToDoObject);
+		this.setState({
+			newToDo: ""
+		});
 	}
 	render(){
 		return(
 			<View>
 				<TextInput
+					value = {this.state.newToDo}
 					style={styles.toDoInput}
 					onChange = {this.onToDoChange.bind(this)}
 					placeholder="Enter a New ToDo!" />
-				<TouchableHighlight style={styles.button}
+				<TouchableHighlight 
+					style={styles.button}
 					underlayColor='#99d9f4'
 					onPress={this.onSubmitPressed.bind(this)}>
 				  <Text style={styles.buttonText}>Submit</Text>

@@ -1,6 +1,7 @@
 var React = require("react-native");
 var TabBar = require("./TabBar");
 var SubmitToDos = require("./SubmitToDos");
+var ToDoComponent = require("./ToDoComponent");
 
 var {
 	View,
@@ -18,10 +19,8 @@ class ToDoList extends React.Component{
 	}
 	renderToDos(){
 		return(
-			<View>
-				<Text style={styles.test}>Hello World</Text>
-				<Text style={styles.test}>Hello World</Text>
-				<Text style={styles.test}>Hello World</Text>
+			<View style={styles.testTwo}>
+				{ToDoComponent}
 			</View>
 		);
 	}
