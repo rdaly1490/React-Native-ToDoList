@@ -20,7 +20,7 @@ class ToDoList extends React.Component{
 	renderToDos(){
 		return(
 			<View style={styles.testTwo}>
-				{ToDoComponent}
+				<ToDoComponent />
 			</View>
 		);
 	}

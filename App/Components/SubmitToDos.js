@@ -1,4 +1,5 @@
 var React = require("react-native");
+var api = require("../Utils/api");
 
 var {
 	Text,
@@ -29,6 +30,7 @@ class SubmitToDos extends React.Component{
 		this.setState({
 			newToDo: ""
 		});
+		api.addTodo("rdaly1490", ToDoObject);
 	}
 	render(){
 		return(
