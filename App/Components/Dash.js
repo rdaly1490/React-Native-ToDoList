@@ -2,6 +2,7 @@ var React = require("react-native");
 var TabBar = require("./TabBar");
 var SubmitToDos = require("./SubmitToDos");
 var ToDoComponent = require("./ToDoComponent");
+var api = require("../Utils/api");
 
 var {
 	View,
@@ -20,14 +21,14 @@ class ToDoList extends React.Component{
 	renderToDos(){
 		return(
 			<View style={styles.testTwo}>
-				<ToDoComponent />
+				<ToDoComponent username={this.props.username} todos={this.props.todos}/>
 			</View>
 		);
 	}
 	renderSubmitForm(){
 		return(
 			<View style={styles.testTwo}>
-				<SubmitToDos username={this.props.username}/>
+				<SubmitToDos username={this.props.username} />
 			</View>
 		);
 	}

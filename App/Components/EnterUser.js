@@ -41,7 +41,10 @@ class EnterUser extends React.Component{
 					this.props.navigator.push({
 						title: this.state.username+"'s ToDos" || "Select an Option",
 							component: Dash,
-							passProps: {username: this.state.username}
+							passProps: {
+								username: this.state.username,
+								todos: res
+							}
 					});
 					this.setState({
 						isLoading:false,
