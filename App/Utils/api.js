@@ -1,12 +1,12 @@
 var api = {
-	getNotes(username){
-		username = "rdaly1490";
+	getTodos(username){
+		username = username.toLowerCase().trim();
 		var url = `https://todolist-app.firebaseio.com/${username}.json`;
 		return fetch(url)
 				.then((res) => res.json());
 	},
 	addTodo(username, todo){
-		username = "rdaly1490";
+		username = username.toLowerCase().trim();
 		var url = `https://todolist-app.firebaseio.com/${username}.json`;
 		return fetch(url, {
 			method: "post",

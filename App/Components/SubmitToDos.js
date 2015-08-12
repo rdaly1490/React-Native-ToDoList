@@ -30,13 +30,13 @@ class SubmitToDos extends React.Component{
 		this.setState({
 			newToDo: ""
 		});
-		api.addTodo("rdaly1490", ToDoObject);
+		api.addTodo(this.props.username, ToDoObject);
 	}
 	render(){
 		return(
 			<View>
 				<TextInput
-					value = {this.state.newToDo}
+					value = {this.state.newToDo}//makes it reset to empty string
 					style={styles.toDoInput}
 					onChange = {this.onToDoChange.bind(this)}
 					placeholder="Enter a New ToDo!" />

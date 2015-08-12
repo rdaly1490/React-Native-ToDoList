@@ -27,7 +27,7 @@ class ToDoList extends React.Component{
 	renderSubmitForm(){
 		return(
 			<View style={styles.testTwo}>
-				<SubmitToDos />
+				<SubmitToDos username={this.props.username}/>
 			</View>
 		);
 	}

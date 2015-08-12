@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-var ToDoList = require("./App/Components/ToDoList");
+var EnterUser = require("./App/Components/EnterUser");
 
 var {
   AppRegistry,
@@ -17,8 +17,8 @@ var todoList = React.createClass({
 	    <NavigatorIOS
 	      style={styles.container}
 	      initialRoute={{
-	        component: ToDoList,
-	        title: 'My To-Do List',
+	        component: EnterUser,
+	        title: 'ToDo App',
 	        passProps: { myProp: 'foo' }
 	      }} />
 	);
