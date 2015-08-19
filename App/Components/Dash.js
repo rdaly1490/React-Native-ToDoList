@@ -15,13 +15,21 @@ class ToDoList extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			selectedTab: "ActiveToDos"
+			selectedTab: "ActiveToDos",
+			todoList: this.props.todos
 		}
 	}
 	renderToDos(){
+		api.getTodos(this.props.username)
+			.then((res) => {
+				console.log(res);
+				this.setState({
+					todoList: res
+				});
+			});
 		return(
 			<View style={styles.testTwo}>
-				<ToDoComponent username={this.props.username} todos={this.props.todos}/>
+				<ToDoComponent username={this.props.username} todos={this.state.todoList}/>
 			</View>
 		);
 	}

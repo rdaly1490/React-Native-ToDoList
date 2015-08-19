@@ -1,4 +1,5 @@
 var React = require("react-native");
+var api = require("../Utils/api");
 
 var {
 	Text,
